@@ -2,61 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <!-- CHANGED: Added compatibility + responsive viewport -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CHANGED: Theme colour -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#97144d">
-
-  <!-- CHANGED: Updated description -->
-  <meta
-    name="description"
-    content="SAARTHI: your money, brought together. An offline, fictional household financial-planning demo."
-  >
-
+  <meta name="description" content="SAARTHI: your money, brought together. An offline, fictional household financial-planning demo.">
   <title>SAARTHI • Your financial companion</title>
-
-  <!-- CHANGED: Make sure these files are in the SAME folder as index.html -->
-  <link rel="stylesheet" href="./styles.css">
-
-  <!-- CHANGED: defer keeps JavaScript from blocking page loading -->
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="companion.css">
+  <script src="app.js" defer></script>
+  <script src="companion.js" defer></script>
 </head>
-
 <body>
-
-  <!-- Accessibility: Skip directly to the main application -->
   <a class="skip" href="#main">Skip to content</a>
-
-  <!--
-    MAIN APPLICATION
-    app.js should inject the SAARTHI interface into this element.
-  -->
   <div id="app"></div>
-
-  <!--
-    Detail modal
-    app.js can use this dialog for additional information.
-  -->
-  <dialog id="detail" aria-labelledby="dialog-title">
-    <div id="dialog-content"></div>
-  </dialog>
-
-  <!-- Toast / notification area -->
+  <dialog id="detail" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Fallback if JavaScript is disabled -->
-  <noscript>
-    <main id="main">
-      <h1>SAARTHI needs JavaScript</h1>
-      <p>
-        Enable JavaScript to explore this offline demo.
-        No real financial accounts are connected.
-      </p>
-    </main>
-  </noscript>
-
+  <noscript><main><h1>SAARTHI needs JavaScript</h1><p>Enable JavaScript to explore this offline demo. No real financial accounts are connected.</p></main></noscript>
 </body>
 </html>
